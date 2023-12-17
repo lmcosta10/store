@@ -53,3 +53,24 @@ If you get invalid syntax, open a new terminal window
 	def say_hello(request):
 		return render(request, 'hello.html', {'name': 'YN'})
 	```
+17)  Using logic in html:
+In hello.html:
+	```html
+	{% if name %}
+	<h1>Hello {{ name }}</h1>
+	{% else %}
+	<h1>Hello!</h1>
+	{% endif %}
+	```
+## Debug in vscode
+18) Click in Run and Debug on your left
+19) Click in create a launch launch.json file, and then, in this case, python and then django
+20) Add a port in "args" so it doesn't clash with the one in use for the server:
+    ```json
+    ...
+    "runserver",
+    "9000"
+    ```
+21) Now you can debug in Run and Debug, just click on the play button that's followed by Python: Django, and you can use the little bar to take a step forward, step into functions etc
+22) Alternatively, you can use F5
+## Debug with Django-Debug-Toolbar
