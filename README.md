@@ -45,7 +45,9 @@ If you get invalid syntax, open a new terminal window
 ## Templates
 14) Create templates folder in app folder, and a hello.html file in it
 15) In hello.html:
+    ```html
 	<h1>Hello {{ name }}</h1>
+    ```
 16) In projectfolder/views.py:
 	```python
 	def say_hello(request):
