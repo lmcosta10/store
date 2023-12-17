@@ -1,6 +1,7 @@
 This repository is based on this youtube tutorial: https://youtu.be/rHux0gMZ3Eg?si=O7HlqrsMnJ7sOkLl
 
-Step by step:
+# Step by step:
+## Set up
 1) (In vscode terminal in project folder) pipenv install django
 2) pipenv shell
 2) django-admin startproject projectname .
@@ -11,6 +12,7 @@ Step by step:
 6) In .vscode/settings.json: "python.pythonPath": "path-to-interpreter". Change \ to / if on Windows
 7) python manage.py runserver [portnumber]
 If you get invalid syntax, open a new terminal window
+## Creating an app
 8) (New terminal window) python manage.py startapp appname
 9) In projectfolder/settings.py -> INSTALLED_APPS -> add 'appname'
 10) In projectfolder/views.py:
@@ -20,6 +22,7 @@ If you get invalid syntax, open a new terminal window
 	def say_hello(request):
 		return HttpResponse()
 	```
+## Mapping urls to views
 11) Create urls.py in app folder
 12) In this file, write:
 	```python
