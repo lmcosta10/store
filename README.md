@@ -20,4 +20,22 @@ If you get invalid syntax, open a new terminal window
 	def say_hello(request):
 		return HttpResponse()
 	```
-9) 
+11) Create urls.py in app folder
+12) In this file, write:
+	```python
+	from django.urls import path
+	from . import views
+
+	urlpatterns = [
+		path('hello/', views.say_hello)
+	]
+	```
+13) In projectfolder/urls.py
+	```python
+	from django.urls import path, include
+
+	urlpatterns = [
+		...
+		path('appname/', include('appname.urls'))
+	]
+	```
