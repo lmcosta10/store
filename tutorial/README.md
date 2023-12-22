@@ -1,0 +1,1 @@
+This tutorial is based on freeCodeCamp's Responsive Web Design course.
