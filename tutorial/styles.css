@@ -1,42 +1,61 @@
+html {
+    box-sizing: border-box;
+}
+
 body {
     height: 100%;
+    font-size: 20px;
 }
 
 #navbar {
-    width: 200px;
+    width: 300px;
     height: 100%;
+    font-size: 25px;
     position: fixed;
     top: 0;
     left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-right: 4px solid rgb(114, 109, 133);
+}
+
+#navbar header {
+    padding: 16px;
 }
 
 #navbar ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    border-top: 4px solid rgb(114, 109, 133);
 }
 
 #navbar li {
-    padding: 8px;
+    padding: 16px;
     text-align: left;
+    border-bottom: 2px solid rgb(114, 109, 133);
 }
 
 #navbar a {
     text-decoration: none;
     display: block;
+    color: rgb(188, 188, 188);
 }
 
 main {
-    margin-left: 220px;
+    margin-left: 320px;  /* Largura da barra de navegação + espaçamento */
     padding: 16px;
 }
 
 #main-doc header {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 code[class=codeblock] {
     display: block;
+    width: 80%;
+    font-size: 16px;
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 5px;
@@ -44,6 +63,7 @@ code[class=codeblock] {
 
 p code {
     background-color: #f0f0f0;
+    font-size: 16px;
     padding: 3px;
     border-radius: 5px;
 }
