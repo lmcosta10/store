@@ -30,7 +30,7 @@ main {
     padding: 16px;
 }
 
-code {
+code[class=codeblock] {
     display: block;
     background-color: #f0f0f0;
     padding: 10px;
