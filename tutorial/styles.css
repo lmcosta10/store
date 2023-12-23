@@ -1,0 +1,38 @@
+body {
+    height: 100%;
+}
+
+#navbar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#navbar li {
+    padding: 8px;
+    text-align: left;
+}
+
+#navbar a {
+    text-decoration: none;
+    display: block;
+}
+
+main {
+    margin-left: 220px; /* Largura da barra de navegação + algum espaçamento */
+    padding: 16px;
+}
+
+code {
+    display: block;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}

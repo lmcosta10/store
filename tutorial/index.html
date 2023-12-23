@@ -20,9 +20,12 @@
       </section>
       <section class="main-section" id="Set_Up">
         <header>Set Up</header>
-        <p></p>
-        <code></code>
-        <p></p>
+        <p>Para a criação de um ambiente virtual e instalação das dependências do projeto, rode o código a seguir.</p>
+        <code>pipenv install django</code>
+        <p>Então, para ativar o ambiente virtual, e, em seguida, criar a estrutura inicial de um projeto django, rode o código a seguir. Lembre que projectname deve ser substituído pelo nome de seu projeto.</p>
+        <pre><code>pipenv shell
+django-admin startproject projectname .</code></pre>
+        <p>Você notará que alguns arquivos e pastas serão criados. Caso você queira rodar o servidor, faça <code>python manage.py runserver (portnumber)</code>. portnumber é opcional.</p>
       </section>
       <section class="main-section" id="">
         <header></header>
