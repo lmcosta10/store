@@ -7,13 +7,16 @@
     <nav id="navbar">
       <header>Django for Beginners</header>
       <ul>
-        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
-        <li><a class="nav-link" href="#Set_Up"></a></li>
+        <li><a class="nav-link" href="#Introdução">Introdução</a></li>
+        <li><a class="nav-link" href="#Set_Up">Set Up</a></li>
+        <li><a class="nav-link" href="#Criando_um_App">Criando um App</a></li>
+        <li><a class="nav-link" href="#Views">Views</a></li>
+        <li><a class="nav-link" href="#Mapeando_urls_para_views">Mapeando urls para views</a></li>
       </ul>
     </nav>
     <main id="main-doc">
-      <section class="main-section" id="Introduction">
-        <header>Introduction</header>
+      <section class="main-section" id="Introdução">
+        <header>Introdução</header>
         <p>Test</p>
         <code class="codeblock"></code>
         <p></p>
@@ -25,25 +28,47 @@
         <p>Então, para ativar o ambiente virtual, e, em seguida, criar a estrutura inicial de um projeto django, rode o código a seguir. Lembre que projectname deve ser substituído pelo nome de seu projeto.</p>
         <pre><code class="codeblock">pipenv shell
 django-admin startproject projectname .</code></pre>
-        <p>Você notará que alguns arquivos e pastas serão criados. Caso você queira rodar o servidor, faça <code>python manage.py runserver (portnumber)</code>. portnumber é opcional.</p>
+        <p>Você notará que alguns arquivos e pastas serão criados. Caso você queira rodar o servidor, faça <code>python manage.py runserver (portnumber)</code>. portnumber é opcional, e o padrão é a porta 8000.</p>
+        <p>Em seguida, precisamos fazer com que o interpretador usado para o projeto seja o gerado pelo pipenv. Para isso, rode o comando <code>pipenv --venv</code>.
+        Ele fornecerá o caminho para esse interpretador. Copie esse caminho, e então, faça Ctrl+Shift+P para abrir o Painel de Comando (Command Palette), procure "Python Interpreter",
+        selecione "Create Interpreter Path". Cole o caminho copiado, e adicione "\Scripts\python.exe" ao final desse caminho. Reinicie o terminal do vscode para aplicar essa mudança.</p>
+        <p>...</p>
       </section>
-      <section class="main-section" id="">
-        <header></header>
-        <p></p>
-        <code></code>
-        <p></p>
+      <section class="main-section" id="Criando_um_App">
+        <header>Criando um App</header>
+        <p>Para criar a estrutura inicial de um app django, rode o comando a seguir. appname deve ser substituído pelo nome do seu aplicativo.</p>
+        <code class="codeblock">python manage.py startapp appname</code>
+        <p>Então, na pasta do projeto, vá no arquivo settings.py e, na lista INSTALLED_APPS, adicione o nome do seu aplicativo.</p>
       </section>
-      <section class="main-section" id="">
-        <header></header>
-        <p></p>
-        <code></code>
-        <p></p>
+      <section class="main-section" id="Views">
+        <header>Views</header>
+        <p>Agora, vamos criar uma view. No django, views são funções ou classes que processam as requisições HTTP, retornando uma resposta HTTP.</p>
+        <p>Vá no arquivo views.py na pasta do projeto e adicione o seguinte código:</p>
+        <pre><code class="codeblock">def say_hello(request):
+return render(request, 'hello.html')</code></pre>
+        <p>Essa função fará com que um arquivo hello.html seja renderizado e retornado. Esse arquivo é chamado de template e, para fazer com que a função de fato
+        o retorne, crie uma pasta "templates" na pasta do seu aplicativo, e crie o arquivo hello.html dentro dela. Você pode usar o seguinte exemplo de código para esse arquivo:</p>
+        <pre><code class="codeblock">&lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
+        <p>Por fim, devemos determinar qual a requisição HTTP que retorna essa página. Isso é explicado na seção a seguir.</p>
       </section>
-      <section class="main-section" id="">
-        <header></header>
-        <p></p>
-        <code></code>
-        <p></p>
+      <section class="main-section" id="Mapeando_urls_para_views">
+        <header>Mapeando urls para views</header>
+        <p>Na pasta de seu aplicativo, crie o arquivo urls.py. Nele, escreva o código a seguir:</p>
+        <pre><code class="codeblock">from django.urls import path
+from . import views
+          
+urlpatterns = [
+    path('hello/', views.say_hello)
+]</code></pre>
+        <p>Esse código mapeia requisições para "hello" no aplicativo, ou seja, um caminho "/appname/hello/". Porém, requisições para o aplicativo ainda
+        não foram configuradas no projeto. Para isso, vá para o arquivo urls.py no projeto e adicione o seguinte código:</p>
+        <pre><code class="codeblock">from django.urls import path, include
+
+urlpatterns = [
+    ...
+    path('appname/', include('appname.urls'))
+]</code></pre>
+        <p>Com isso, você pode acessar a página do seu projeto, adicionar "/appname/hello/" ao final da url, e verá que o arquivo hello.html aparece renderizado.</p>
       </section>
     </main>
   </body>

@@ -26,13 +26,24 @@ body {
 }
 
 main {
-    margin-left: 220px; /* Largura da barra de navegação + algum espaçamento */
+    margin-left: 220px;
     padding: 16px;
+}
+
+#main-doc header {
+    font-weight: bold;
+    font-size: 22px;
 }
 
 code[class=codeblock] {
     display: block;
     background-color: #f0f0f0;
     padding: 10px;
+    border-radius: 5px;
+}
+
+p code {
+    background-color: #f0f0f0;
+    padding: 3px;
     border-radius: 5px;
 }
