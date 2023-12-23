@@ -3,24 +3,23 @@ html {
 }
 
 body {
+    width: 95%;
     height: 100%;
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 #navbar {
-    width: 300px;
+    width: 23%;
     height: 100%;
-    font-size: 25px;
+    font-size: 1.25em;
     position: fixed;
     top: 0;
     left: 0;
-    margin-top: 10px;
-    margin-left: 10px;
     border-right: 4px solid rgb(114, 109, 133);
 }
 
 #navbar header {
-    padding: 16px;
+    padding: 5%;
 }
 
 #navbar ul {
@@ -31,7 +30,7 @@ body {
 }
 
 #navbar li {
-    padding: 16px;
+    padding: 5%;
     text-align: left;
     border-bottom: 2px solid rgb(114, 109, 133);
 }
@@ -43,27 +42,47 @@ body {
 }
 
 main {
-    margin-left: 320px;  /* Largura da barra de navegação + espaçamento */
-    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 25%; /* Largura da barra de navegação + algum espaçamento */
 }
 
 #main-doc header {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 1.25em;
 }
 
 code[class=codeblock] {
     display: block;
     width: 80%;
-    font-size: 16px;
+    font-size: 1em;
     background-color: #f0f0f0;
-    padding: 10px;
+    padding: 2%;
     border-radius: 5px;
 }
 
 p code {
     background-color: #f0f0f0;
-    font-size: 16px;
-    padding: 3px;
+    font-size: 1em;
+    padding: 0.2%;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    #navbar {
+        height: unset;
+        width: 100%;
+        margin-left: 0;
+        position: relative;
+        border-right: unset;
+    }
+
+    main {
+        margin-top: 10%;
+        margin-left: 0;
+    }
+
+    code[class=codeblock] {
+        width: 95%;
+    }
 }
